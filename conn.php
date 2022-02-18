@@ -1,8 +1,9 @@
 <?php
 
+
 $hostName = "localhost";
 $user = "root";
-$senha = null;
+$senha = 123456;
 $dbName = "agenda";
 $port = 3306;
 
@@ -13,3 +14,13 @@ if ($pdo = new PDO("mysql:hostname={$hostName};dbname={$dbName};port={$port}", $
 } else {
 	echo "Erro";
 };
+
+//CADASTRAR
+
+if (isset($_POST['nome'])) {
+	$sql = $pdo->prepare("INSERT INTO agenda1 VALUES(default,?,?,?)");
+	$sql->execute(array($_POST['nome'], $_POST['sobreNome'], $_POST['telefone']));
+	echo "{$_POST['nome']} cadastrado com sucesso!";
+	exit();
+}
+    

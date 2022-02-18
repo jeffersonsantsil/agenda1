@@ -23,7 +23,7 @@
     </div>
     <div class="container">
 
-        <form action="" method="POST" name="formulario">
+        <form action="conn.php" method="POST" name="formulario">
 
             <div class="form-group">
                 <div class="col-md-4 offset-md-4">
@@ -45,7 +45,7 @@
             </div>
             <div class="form-group">
                 <div class="col-md-4 offset-md-4">
-                    <button type="button" class="btn btn-primary">Salvar</button>
+                    <button type="submit" class="btn btn-primary">Salvar</button>
                 </div>
             </div>
         </form>
