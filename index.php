@@ -51,12 +51,47 @@
         </form>
     </div>
 
+    <div class="container" id="listar">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Sobrenome</th>
+                    <th scope="col">Telefone</th>
+                    <th scope="col">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($lista as $key => $listar) : ?>
+                    <tr>
+                        <th scope="row"><?= $listar['id'] ?></th>
+                        <td><?= $listar['nome'] ?></td>
+                        <td><?= $listar['sobreNome'] ?></td>
+                        <td><?= $listar['telefone'] ?></td>
+                        <td>Editar | Deletar</td>
+                    </tr>
+                <?php endforeach ?>
+            </tbody>
+        </table>
+
+    </div>
+
 
 
 </body>
 <footer>
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+    <!-- <script>
+      function alertCadOk(){
+          
+          alert("ok")
+      }
+    </script> -->
+
 </footer>
 
 </html>

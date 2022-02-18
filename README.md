@@ -8,7 +8,7 @@ create table agenda1(
 id int (11) auto_increment not null,
 nome varchar (20) not null,
 sobreNome varchar (20),
-telefone int (12)  not null, 
+telefone varchar (15)  not null, 
 primary key (id),
 unique key (telefone)
 );
