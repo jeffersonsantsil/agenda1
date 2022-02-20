@@ -21,7 +21,6 @@ if (isset($_POST['nome'])) {
 	$sql = $pdo->prepare("INSERT INTO agenda1 VALUES(default,?,?,?)");
 	$sql->execute(array($_POST['nome'], $_POST['sobreNome'], $_POST['telefone']));
 	echo '<script>alert("Cadastro de >' . strtoupper($_POST['nome']) . '< realizado com Sucesso!")</script>';
-	
 }
 
 //LISTAR
@@ -36,18 +35,15 @@ $lista = $list->fetchAll();
 
 if (isset($_GET['delete'])) {
 	$id = (int) $_GET['delete'];
-	// $queryBuscaNome = "SELECT nome from agenda1 where id=$id";
-	// $nome = $pdo->prepare($queryBuscaNome);
-	// $nome = $pdo->exec($nome);
+	$queryBuscaNome = "SELECT nome from agenda1 where id=$id";
+	$query = $pdo->query($queryBuscaNome)->fetch();
 
-	// //var_dump($nome);
-	// echo $nome;
-	// die();
+	$nome = implode($query);
+	echo $nome;
+	//die();
+
 	$pdo->exec("DELETE FROM agenda1 where id=$id");
 
-	//echo alert$nome;
-	
-	echo '<script>alert("Usuario de id '. $id . ' ecluído com sucesso!")</script>';
-	//echo '<script>alert("Cadastro de >' . strtoupper($_POST['nome']) . '< realizado com Sucesso!")</script>';
-	
+
+	echo '<script>alert("Usuario de nome ' .strtoupper($nome) . ' ecluído com sucesso!")</script>';
 }
